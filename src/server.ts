@@ -9,9 +9,14 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-    origin: process.env.CORS_ORIGIN
-}))
+const corsOptions = {
+    origin: ['http://localhost:5173', 'https://surencodes.com'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+};
+
+app.use(cors(corsOptions));        
+app.options(/.*/, cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +26,7 @@ const API_KEY = process.env.RESEND_API_KEY!;
 const resend = new Resend(API_KEY);
 
 app.get('/', (req, res) => {
+    console.log('Csndfkjbsfoiu')
     res.json({
         success: true,
         message: 'Health Check Done!'
