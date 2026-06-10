@@ -15,13 +15,15 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon src/server.ts --watch .env",
+    "dev": "nodemon --watch src --ext ts,json --exec ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.5.2",
+    "resend": "^6.12.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
