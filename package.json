@@ -13,7 +13,7 @@
   "license": "ISC",
   "author": "Surendharangithub",
   "type": "commonjs",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
