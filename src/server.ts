@@ -25,8 +25,7 @@ const PORT = process.env.NODE_APP_PORT!;
 const API_KEY = process.env.RESEND_API_KEY!;
 const resend = new Resend(API_KEY);
 
-app.get('/', (req, res) => {
-    console.log('Csndfkjbsfoiu')
+app.get('/v1/api/ping', (req, res) => {
     res.json({
         success: true,
         message: 'Health Check Done!'
